@@ -1,0 +1,61 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Gim-ioc</string>
+
+    /* Menu */
+    <string name="menu_reserves">Les meves reserves</string>
+    <string name="menu_disciplines">Disciplines</string>
+    <string name="menu_equip">Equip</string>
+    <string name="menu_centres">Centres</string>
+    <string name="menu_contactar">Contactar</string>
+    <string name="menu_telefon">123456789</string>
+    <string name="menu_instagram">\@GiomIOC</string>
+    <string name="menu_perfil">Perfil</string>
+    <string name="menu_inici">Inici</string>
+
+    /* Txt's */
+    <string name="txtData">Data</string>
+    <string name="txtEntrar">ENTRAR</string>
+    <string name="txtEmail">Email</string>
+    <string name="txtContrasenya">Contasenya</string>
+    <string name="txtNomProfessor">Nom Professor</string>
+    <string name="txtReserva">RESERVA UNA CLASSE</string>
+    <string name="txtFormacio">FORMACIONS</string>
+    <string name="txtClasse">Nom classe</string>
+    <string name="txtHorariClasse">Horari Classe</string>
+    <string name="txtEliminarReserva">X</string>
+    <string name="txtCorreu">Introdueix un correu electrònic</string>
+    <string name="txtPlaces">10</string>
+    <string name="txtCentre">Centre</string>
+    <string name="txtGraciesContactar">Gràcies per contactar amb nossaltres</string>
+    <string name="txtNomUsuari">Nom Usuari</string>
+    <string name="txtNovaContrasenya">Introdueix una contrasenya</string>
+    <string name="txtrepeteixContrasenya">Repeteix la contrasenya</string>
+    <string name="txtNomAlumne">Nom Alumne</string>
+    <string name="txtConfiguraAgenda">CONFIGURAR AGENDA</string>
+    <string name="txtConfigurarUsuaris">CONFIGURAR USUARIS</string>
+    <string name="txtConfigurarProfessors">CONFIGURAR PROFESSORS</string>
+
+    /* Butons */
+    <string name="txt_btn_login">ENTRAR</string>
+    <string name="btn_recuperarpass">Recordar Contrasenya</string>
+    <string name="btnNouUsuari">NOU USUARI</string>
+    <string name="btnEnviar">Enviar</string>
+
+    /* Toast's */
+    <string name="toastSenseConexio">No tens Conexió!!</string>
+
+    <string name="email_ioc">info@gimioc.com</string>
+    <string name="descReserva">Logo de reserves</string>
+
+
+    <string name="imgLogo">Logo HappYoga</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtNovaClasse">Nova Classe</string>
+    <string name="ediTextNomClasse">Nom Classe</string>
+    <string name="btnCrearClasse">Crear Classe</string>
+    <string name="editTxtEmail">introdueix un email</string>
+    <string name="ediTxtNumeroPlaces">Número de places</string>
+    <string name="menu_gimioc">Gim-IOC</string>
+    <string name="switch_recordar">Recordar</string>
+
+</resources>

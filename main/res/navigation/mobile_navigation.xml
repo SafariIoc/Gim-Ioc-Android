@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_disciplines"/>
+        /* android:name="m.e.happyyogagirona.ui.disciplines.DisciplinesFragment"
+        android:label="@string/menu_disciplines"
+        tools:layout="@layout/fragment_disciplines" */
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.DAM.gim_ioc.home.HomeFragment"
+        android:label="@string/menu_gimioc"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_equip"/>
+        /*android:name="m.e.happyyogagirona.ui.equip.EquipFragment"
+        android:label="@string/menu_equip"
+        tools:layout="@layout/fragment_equip" />*/
+    <fragment
+        android:id="@+id/nav_perfil"/>
+        /*android:name="m.e.happyyogagirona.ui.perfil.PerfilFragment"
+        android:label="@string/menu_reserves"
+        tools:layout="@layout/fragment_perfil" />*/
+    <fragment
+        android:id="@+id/nav_centres"/>
+        /*android:name="m.e.happyyogagirona.ui.centres.CentresFragment"
+        android:label="@string/menu_centres"
+        tools:layout="@layout/fragment_centres" >*/
+        <action
+            android:id="@+id/action_nav_centres_pop"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_centres"
+            app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/nav_email"/>
+        /*android:name="m.e.happyyogagirona.ui.perfil.EmailFragment"
+        android:label="@string/email_happy"
+        tools:layout="@layout/fragment_email" />*/
+</navigation>

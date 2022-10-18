@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/menu_inici" />
+        <item android:title="@string/menu_perfil">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_perfil"
+                        android:title="@string/menu_reserves" />
+                </group>
+            </menu>
+        </item>
+
+
+        <item android:title="@string/menu_gimioc">
+            <menu>
+                <group android:checkableBehavior="single">
+
+                    <item
+                        android:id="@+id/nav_centres"
+                        android:title="@string/menu_centres" />
+
+                    <item
+                        android:id="@+id/nav_disciplines"
+                        android:title="@string/menu_disciplines" />
+
+                    <item
+                        android:id="@+id/nav_equip"
+                        android:title="@string/menu_equip" />
+                </group>
+            </menu>
+        </item>
+        <item android:title="@string/menu_contactar">
+            <menu>
+                <group android:checkableBehavior="single">
+
+                    <item
+                        android:id="@+id/nav_email"
+                        android:title="@string/email_ioc" />
+
+                    <item
+                        android:id="@+id/nav_telefon"
+                        android:title="@string/menu_telefon" />
+
+                    <item
+                        android:id="@+id/nav_instagram"
+                        android:title="@string/menu_instagram" />
+                </group>
+            </menu>
+        </item>
+    </group>
+</menu>
