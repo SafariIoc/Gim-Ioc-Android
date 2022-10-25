@@ -5,11 +5,9 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/nav_home">
 
-    <fragment
-        android:id="@+id/nav_disciplines"/>
-        /* android:name="m.e.happyyogagirona.ui.disciplines.DisciplinesFragment"
-        android:label="@string/menu_disciplines"
-        tools:layout="@layout/fragment_disciplines" */
+    /* android:name="m.e.happyyogagirona.ui.disciplines.DisciplinesFragment"
+    android:label="@string/menu_disciplines"
+    tools:layout="@layout/fragment_disciplines" */
 
     <fragment
         android:id="@+id/nav_home"
@@ -39,7 +37,12 @@
 
     <fragment
         android:id="@+id/nav_email"/>
-        /*android:name="m.e.happyyogagirona.ui.perfil.EmailFragment"
+    <fragment
+        android:id="@+id/navCalenadri"
+        android:name="com.DAM.gim_ioc.ui.CalendariFragment"
+        android:label="fragment_calendari"
+        tools:layout="@layout/fragment_calendari" />
+    /*android:name="m.e.happyyogagirona.ui.perfil.EmailFragment"
         android:label="@string/email_happy"
         tools:layout="@layout/fragment_email" />*/
 </navigation>

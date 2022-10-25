@@ -12,8 +12,15 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
-import io.realm.RealmResults;
 import com.DAM.gim_ioc.ModelsRealm.LoginUsuari;
+import com.DAM.gim_ioc.Volley.VolleySingleton;
+import com.android.volley.Request;
+import com.android.volley.toolbox.StringRequest;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.util.HashMap;
+import java.util.Map;
 
 public class IniciActivity extends AppCompatActivity {
 
@@ -72,24 +79,58 @@ public class IniciActivity extends AppCompatActivity {
         progressBarLogin.setVisibility(View.VISIBLE);
         progressBarLogin.setEnabled(true);
 
-        RealmResults<LoginUsuari> results = realm.where(LoginUsuari.class)
-                .findAll();
-        if (results.size() != 0) {
-            realm.beginTransaction();
-            results.deleteAllFromRealm();
-            realm.commitTransaction();
-        }
-        realm.beginTransaction();
-        LoginUsuari loginUsuari = realm.createObject(LoginUsuari.class, String.valueOf(0));
-        loginUsuari.setIdBBDD(1);
-        loginUsuari.setUserName("ferran");
-        loginUsuari.setToken("token");
-        loginUsuari.setEmail("email");
-        loginUsuari.setSubscripcio("subscripcio");
-        realm.commitTransaction();
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-        finish();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://www.servidorIOC.com",
+                ServerResponse -> {
+
+                    try {
+                        JSONArray array = new JSONArray(ServerResponse);
+
+                        JSONObject dades = array.getJSONObject(0);
+                        if (dades.getString("data").equalsIgnoreCase("Data Matched")) {
+
+                            LoginUsuari loginUsuari = realm.where(LoginUsuari.class)
+                                    .findFirst();
+                            realm.beginTransaction();
+                            loginUsuari.setIdBBDD(dades.getInt("id"));
+                            loginUsuari.setUserName(dades.getString("login"));
+                            loginUsuari.setToken(dades.getString("token"));
+                            loginUsuari.setEmail(dades.getString("email"));
+                            loginUsuari.setSubscripcio(dades.getString("subscripcio"));
+                            loginUsuari.setToken(dades.getString("token"));
+                            realm.commitTransaction();
+
+                            // Anulo el progressBar al rebre resposta del servidor
+                            progressBarLogin.setVisibility(View.GONE);
+
+                            // Tanquem l'actual Activity i obrim l'aplicació
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
+                            finish();
+
+                        } else {
+                            Toast.makeText(getApplicationContext(), dades.getString("data"), Toast.LENGTH_LONG).show();
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                },
+                volleyError -> {
+                    // Anulo el progressBar al rebre resposta del servidor
+                    progressBarLogin.setVisibility(View.GONE);
+                    Toast.makeText(getApplicationContext(), R.string.toastSenseConexio, Toast.LENGTH_LONG).show();
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+
+                Map<String, String> params = new HashMap<>();
+                params.put("User_Login", UsuariHolder);
+                params.put("User_Password", PasswordHolder);
+                return params;
+            }
+        };
+
+        VolleySingleton.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
     }
 
     public void CheckEditTextIsEmptyOrNot() {
