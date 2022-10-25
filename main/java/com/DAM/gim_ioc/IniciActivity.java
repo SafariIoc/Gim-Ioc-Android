@@ -74,7 +74,7 @@ public class IniciActivity extends AppCompatActivity {
         progressBarLogin.setVisibility(View.VISIBLE);
         progressBarLogin.setEnabled(true);
         //Creem la petició al servidor amb els paràmetres usuari i contrsenya
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://www.servidorIOC.com",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://mamut.link/gimioc/user_login.php",
                 ServerResponse -> {
 
                     try {
@@ -105,11 +105,15 @@ public class IniciActivity extends AppCompatActivity {
                             finish();
 
                         } else {
+                            // Anulo el progressBar al rebre resposta del servidor
+                            progressBarLogin.setVisibility(View.GONE);
                             //Informem de la resposta del servidor en cas de credencials incorrectes
                             Toast.makeText(getApplicationContext(), dades.getString("data"), Toast.LENGTH_LONG).show();
                         }
 
                     } catch (JSONException e) {
+                        // Anulo el progressBar al rebre resposta del servidor
+                        progressBarLogin.setVisibility(View.GONE);
                         e.printStackTrace();
                     }
                 },
