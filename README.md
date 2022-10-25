@@ -1,4 +1,5 @@
 # Gim-Ioc-Android
 Client Android del Projecte Final de DAM
-![Screenshot_login](https://user-images.githubusercontent.com/10160014/197828737-0e5a6d30-25d3-474b-ad7f-9eeac92e617e.png)
-![Screenshot_interficie](https://user-images.githubusercontent.com/10160014/197828775-0308fbbc-2528-40bc-8735-4e9b7494a11c.png)
+![Screenshot_loginWeb](https://user-images.githubusercontent.com/10160014/197829172-d6da15a2-c5a2-4e33-be69-6d81896db640.png)
+![Screenshot_interficieWeb](https://user-images.githubusercontent.com/10160014/197829191-3525a650-ee51-4723-8d18-b6476ede2331.png)
+
